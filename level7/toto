@@ -1,0 +1,10 @@
+first malloc 0x8 bytes 0x804a008 at $esp+0x1c [1]
+second malloc 0x8 bytes 0x804a018 at $esp+0x4 (void* second[2])
+third malloc 0x8 bytes 0x804a028 at $esp+0x18 [2]
+fourth malloc 0x8 bytes 0x804a038 at third+0x4
+
+strcpy "AAAA" {argv[1]} -> second -> overflow
+strcpy "BBBB" {argv[2]} -> second[1]
+
+write at 0x8049960
+write content 0x8048703
