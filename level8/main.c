@@ -15,15 +15,15 @@ int	main()
 				strcpy(*ptr1, buff + 5);
 			}
 		}
-		if (strstr(buff, "reset") == buff)
+		if (strstr(buff, "reset") == buff) //Idem
 		{
 			free(*ptr1);
 		}
-		if (strstr(buff, "service") == buff)
+		if (strstr(buff, "service") == buff) //Ditto
 		{
 			*ptr2 = strdup(buff + 7);
 		}
-		if (strstr(buff, "login") == buff)
+		if (strstr(buff, "login") == buff) //Tout pareil
 		{
 			if (ptr1[32] == NULL)
 			{
