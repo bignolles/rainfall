@@ -6,7 +6,7 @@ export VM_PATH="$HOME/projects/rainfall/.rainfall_ip"
 updateUser() {
 	if [ ! -z "$1" ]
 	then
-		printf "user_id: %s\nuser_pass: %s\n" $1 `cat "./$1/pass"` > "$KEY_PATH"
+		printf "user_id: %s\nuser_pass: %s\n" $1 `cat "./$1/.pass"` > "$KEY_PATH"
 	else
 		printf "updating user impossible : missing information!\n" 1>&2
 		exit 1
