@@ -1,7 +1,8 @@
 #!/bin/sh
 
-export KEY_PATH="$HOME/projects/rainfall/.key"
-export VM_PATH="$HOME/projects/rainfall/.rainfall_ip"
+export BASE_DIR=$(dirname "$0")
+export KEY_PATH="$BASE_DIR/.key"
+export VM_PATH="$BASE_DIR/.rainfall_ip"
 
 updateUser() {
 	if [ ! -z "$1" ]
@@ -24,14 +25,14 @@ updateVm() {
 
 getUserId()
 {
-	user_id=`cat ./.key | grep user_id | sed 's/user_id: //' | tr -d "\n"`
-	user_pass=`cat ./.key | grep user_pass | sed 's/user_pass: //' | tr -d "\n"`
+	user_id=`cat $KEY_PATH | grep user_id | sed 's/user_id: //' | tr -d "\n"`
+	user_pass=`cat $KEY_PATH | grep user_pass | sed 's/user_pass: //' | tr -d "\n"`
 }
 
 getVmId()
 {
-	vm_ip=`cat ./.rainfall_ip | grep vm_ip | sed 's/vm_ip: //' | tr -d "\n"`
-	vm_port=`cat ./.rainfall_ip | grep vm_port | sed 's/vm_port: //' | tr -d "\n"`
+	vm_ip=`cat $VM_PATH | grep vm_ip | sed 's/vm_ip: //' | tr -d "\n"`
+	vm_port=`cat $VM_PATH | grep vm_port | sed 's/vm_port: //' | tr -d "\n"`
 }
 
 whoAmI()
@@ -45,6 +46,14 @@ whatVM()
 {
 	getVmId
 	printf "%s:%s\n" $vm_ip $vm_port
+	exit 0
+}
+
+noConnect()
+{
+	getUserId
+	getVmId
+	printf "ssh %s@%s -p %s" $user_id $vm_ip $vm_port
 	exit 0
 }
 
@@ -66,6 +75,9 @@ then
 		elif [ "$elem" == "--whatvm" ]
 		then
 			whatVM
+		elif [ "$elem" == "--no-connect" ]
+		then
+			noConnect
 		fi
 	done
 fi
