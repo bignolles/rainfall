@@ -4,7 +4,7 @@
 You will find in this repository the complete solution to the project Rainfall.
 Once the VM provided with this project installed, you should be able to log in through ssh as user `level0`
 
-```shell
+```bash
 $ ssh level0@localhost -p 4242
 	  _____       _       ______    _ _
 	 |  __ \     (_)     |  ____|  | | |
@@ -23,7 +23,7 @@ level0@localhost's password:
 Once logged in, your goal is to obtain the password of user `levelX`, *X* being the number of the next level.
 You'll find this password stored in the file `.pass` in the next user's home directory.
 
-```shell
+```bash
 level0@RainFall:~$ ./level0 $(exploit)
 $ cat /home/user/level1/.pass
 ?????????????????????
@@ -38,7 +38,7 @@ level1@RainFall:~$ _
 
 In evey *levelX* directory, you will find a `flag` file, containing the flag you have to obtain while being logged as *levelX*.
 You will also find a `source` file, containing **metacode** that I have reverse-engineered from the executable
-```shell
+```bash
 $ ls -l ./level1
 total 10
 -rw-r--r--  1 marene  2013_paris    65 Jul  6 17:03 flag
@@ -51,7 +51,7 @@ drwxr-xr-x  2 marene  2013_paris  4096 Jul  6 17:01 ressource
 In some of the directories, you might also find a `ressource` sub-directory.
 It will contain all the scripts and files needed to realize the exploit.
 
-```shell
+```bash
 $ ls -l ./level1/ressource
 total 3
 -rwxr-xr-x  1 marene  2013_paris  391 Jul  6 17:01 run.py
