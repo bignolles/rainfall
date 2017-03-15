@@ -1,6 +1,6 @@
 # RAINFALL
 
-## DISCLAIMER
+## DISCLAIMER
 The present repository contains answers to the school 42 "Rainfall" project.
 Its publisher (me) declines all responsibility if you are too much of a gullible
 nitwit to copy the aforementioned solutions without trying to understand them and
