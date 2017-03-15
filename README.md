@@ -1,5 +1,12 @@
 # RAINFALL
 
+## DISCLAIMER
+The present repository contains answers to the school 42 "Rainfall" project.
+Its publisher (me) declines all responsibility if you are too much of a gullible
+nitwit to copy the aforementioned solutions without trying to understand them and
+then get a well deserved -42.
+You wobbly cunt.
+
 ## Introduction
 You will find in this repository the complete solution to the project Rainfall.
 Once the VM provided with this project installed, you should be able to log in through ssh as user `level0`
